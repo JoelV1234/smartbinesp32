@@ -44,8 +44,8 @@ void wifi_connection(char * ssid, char * passwd)
             
            }
         };
-    strcpy((char*)wifi_configuration.sta.ssid, ssid);
-    strcpy((char*)wifi_configuration.sta.password, pass);    
+    strncpy((char*)wifi_configuration.sta.ssid, ssid);
+    strncpy((char*)wifi_configuration.sta.password, pass);    
     //esp_log_write(ESP_LOG_INFO, "Kconfig", "SSID=%s, PASS=%s", ssid, pass);
     esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_configuration);
     // 3 - Wi-Fi Start Phase
